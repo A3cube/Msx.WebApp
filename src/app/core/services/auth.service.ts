@@ -11,10 +11,8 @@ import { AuthResponseGetDto, UserInfo } from '../models/user-info';
 })
 export class AuthService extends ServiceBaseService {
 
-    private readonly TOKEN = 'token';
+  private readonly TOKEN = 'token';
   private readonly USER_INFO = 'userInfo';
-  private readonly SELECTED_COMPANY = 'selectedCompany';
-
   private _userInfo: UserInfo | null = this.getValueFromStorage(this.USER_INFO)??null;
   private _token : string | null = this.getValueFromStorage(this.TOKEN)??null;
 
@@ -32,7 +30,6 @@ export class AuthService extends ServiceBaseService {
     this.tRolesArrayNull = this.translate.instant("rolesArray non valido");
     this.tNameNotEmpty = this.translate.instant('name non può essere vuoto');
   }
-
 
   public get userInfo() {
     let result : UserInfo | null = null;
